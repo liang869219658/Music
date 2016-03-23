@@ -53,12 +53,10 @@ module.exports = {
         },
         {
           test: /\.(png|jpg)$/,
-          include: path.resolve(__dirname, 'app'),
           loader: 'url?limit=8192'
         },
         {
           test: /\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
-          include: path.resolve(__dirname, 'app'),
           loader: "url?limit=10000"
         }
       ]
