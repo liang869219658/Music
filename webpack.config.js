@@ -45,12 +45,10 @@ module.exports = {
         },
         {
           test: /\.css/,
-          include: path.resolve(__dirname, 'app'),
           loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         },
         {
           test: /\.less/,
-          include: path.resolve(__dirname, 'app'),
           loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
         },
         {
