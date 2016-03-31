@@ -18,6 +18,11 @@ $ npm run dev
 
 查看效果` http://127.0.0.1:8080`
 
+### 代码检查
+```
+$ npm run lint
+```
+
 ### 产出资源
 ```
 $ npm run build
@@ -29,12 +34,12 @@ $ npm run build
 - [x] [React](https://facebook.github.io/react/)
 - [x] [ES6](http://es6.ruanyifeng.com/)
 - [ ] [Redux](https://github.com/rackt/redux)
-- [ ] [React-router](https://github.com/rackt/react-router-redux)
+- [x] [React-router](https://github.com/rackt/react-router-redux)
 - [x] [Babel](https://babeljs.io/)
 - [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [ ] [PostCSS](https://github.com/postcss/postcss)
-- [ ] [Gulp](http://www.gulpjs.com.cn/docs/getting-started/)
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
+- [x] [Eslint](https://github.com/eslint/eslint)
 
 ## 功能特性
 

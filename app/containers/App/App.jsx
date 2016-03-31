@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TestDemo } from '../../components';
+import { MyComponent } from '../../components';
 
 import './App.css';
 
@@ -11,8 +11,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TestDemo />
-        <h1> content from container </h1>
+        <MyComponent />
+        <p>
+          欢迎在github上一起维护这个脚手架项目<br />
+          https://github.com/GuoYongfeng
+        </p>
       </div>
     );
   }

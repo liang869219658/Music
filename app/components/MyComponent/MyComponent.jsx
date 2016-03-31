@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-import './TestDemo.css';
+import './MyComponent.css';
 
-class TestDemo extends Component {
+class MyComponent extends Component {
   render() {
     return (
       <h1 className="demo">
         <span className="glyphicon glyphicon-th"></span>
+        更多干货请前往：http://guoyongfeng.github.io/idoc/
         <span className="glyphicon glyphicon-plane"></span>
-        this is a component
       </h1>
     );
   }
 }
 
-export default TestDemo;
+export default MyComponent;

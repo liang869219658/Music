@@ -1,3 +1,3 @@
 'use strict';
 
-export TestDemo from './TestDemo/TestDemo.jsx';
+export MyComponent from './MyComponent/MyComponent.jsx';
