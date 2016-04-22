@@ -8,7 +8,24 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var node_modules = path.resolve(__dirname, 'node_modules');
 
+/**
+ * 标识开发环境和生产环境
+ * @type {webpack.DefinePlugin}
+ */
+var definePlugin = new webpack.DefinePlugin({
+    __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
+    __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
+});
+
 module.exports = {
+    devServer: {
+      historyApiFallback: true,
+      hot: true,
+      inline: true,
+      contentBase: './build',
+      port: 8080,
+      stats: { colors: true }
+    },
     entry: {
       index: [
         'webpack/hot/dev-server',
@@ -64,6 +81,7 @@ module.exports = {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
+      definePlugin,
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new HtmlWebpackPlugin({
         title: 'your app title',
