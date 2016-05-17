@@ -5,7 +5,7 @@
   "main": "app/index.jsx",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --progress",
-    "build": "npm run clean && ./node_modules/.bin/webpack --progress --color --config webpack.prod.config.js",
+    "build": "npm run clean && ./node_modules/.bin/webpack --progress --colors --config webpack.prod.config.js",
     "lint": "./node_modules/.bin/eslint app",
     "clean": "rm -rf build",
     "test": "./node_modules/.bin/mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
