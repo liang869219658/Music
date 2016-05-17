@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { MyComponent } from '../../components';
 
-import './App.css';
-
-console.log( __DEV__ );
+import './index.css';
 
 class App extends Component {
   constructor(props) {

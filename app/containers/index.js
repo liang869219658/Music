@@ -1,3 +1,3 @@
 'use strict';
 
-export App from './App';
+export App from './App/index.jsx';
