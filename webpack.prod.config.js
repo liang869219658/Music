@@ -23,7 +23,6 @@ module.exports = {
     },
     'display-error-details': true,
     module: {
-      noParse: [],
       loaders: [
         {
           test: /\.js[x]?$/,

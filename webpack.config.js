@@ -49,11 +49,6 @@ module.exports = {
     // 使用externals可以将react分离，然后用<script>单独将react引入
     externals: [],
     module: {
-      // 使用module.noParse针对单独的react.min.js这类没有依赖的模块，速度会更快
-      noParse: [
-        path.resolve(node_modules, 'react/dist/react.min.js'),
-        path.resolve(node_modules, 'react-dom/dist/react-dom.min.js')
-      ],
       loaders: [
         {
           test: /\.js[x]?$/,
