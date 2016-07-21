@@ -40,7 +40,7 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-      extension: ['', '.jsx', '.js', '.json'],
+      extensions: ['', '.js', '.jsx', '.json'],
       // 提高webpack搜索的速度
       alias: { }
     },

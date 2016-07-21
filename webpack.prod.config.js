@@ -18,7 +18,7 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-      extension: ['', '.jsx', '.js', '.json'],
+      extensions: ['', '.js', '.jsx', '.json'],
       alias: {}
     },
     'display-error-details': true,
