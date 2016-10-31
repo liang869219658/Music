@@ -4,7 +4,7 @@
   "description": "boilerplate",
   "main": "app/index.jsx",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --progress",
+    "dev": "./node_modules/.bin/webpack-dev-server --progress --host 0.0.0.0",
     "build": "./node_modules/.bin/webpack --progress --colors --config webpack.prod.config.js",
     "lint": "./node_modules/.bin/eslint app",
     "clean": "rm -rf build/*",
