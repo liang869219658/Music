@@ -4,16 +4,16 @@
   "description": "boilerplate",
   "main": "app/index.jsx",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --progress --host 0.0.0.0",
-    "build": "./node_modules/.bin/webpack --progress --colors --config webpack.prod.config.js",
-    "lint": "./node_modules/.bin/eslint app",
+    "start": "webpack-dev-server --progress",
+    "build": "webpack --progress --colors --config webpack.prod.config.js",
+    "lint": "eslint app",
     "clean": "rm -rf build/*",
-    "test": "./node_modules/.bin/mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
+    "test": "mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
     "test:watch": "npm run test -- --watch"
   },
   "betterScripts": {
     "dev": {
-      "command": "./node_modules/.bin/webpack-dev-server --progress",
+      "command": "webpack-dev-server --progress",
       "env": {
         "BUILD_DEV": "development"
       }
