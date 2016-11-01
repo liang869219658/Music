@@ -24,7 +24,8 @@ module.exports = {
       inline: true,
       contentBase: './build',
       port: 8080,
-      stats: { colors: true }
+      stats: { colors: true },
+      host: '0.0.0.0',
     },
     entry: {
       index: [
