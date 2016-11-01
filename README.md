@@ -31,7 +31,7 @@ $ npm install
 ## 2. dev
 ### 2.1 开发调试
 ```
-$ npm run dev
+$ npm start
 ```
 
 查看效果` http://127.0.0.1:8080`
