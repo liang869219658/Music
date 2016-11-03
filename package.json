@@ -43,7 +43,8 @@
   "dependencies": {
     "better-npm-run": "0.0.8",
     "bootstrap": "^3.3.6",
-    "react": "^0.14.7",
+    "react": "^15.1.0",
+    "react-router": "^2.8.1",
     "react-dom": "^0.14.7"
   },
   "devDependencies": {
