@@ -62,4 +62,6 @@ $ npm run build
 - [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [ ] [PostCSS](https://github.com/postcss/postcss)
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
+- [x] [Less](https://github.com/less/less.js)
+- [x] [Sass](https://github.com/sass/node-sass)
 - [x] [Eslint](https://github.com/eslint/eslint)
