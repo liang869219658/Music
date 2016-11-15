@@ -60,6 +60,10 @@ module.exports = {
           loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         },
         {
+          test: /\.scss$/,
+          loader: 'style!css!sass'
+        },
+        {
           test: /\.less/,
           loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
         },
