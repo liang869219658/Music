@@ -4,16 +4,16 @@
   "description": "boilerplate",
   "main": "app/index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --progress --host 0.0.0.0",
-    "build": "./node_modules/.bin/webpack --progress --colors --config webpack.prod.config.js",
-    "lint": "./node_modules/.bin/eslint app",
+    "start": "webpack-dev-server --progress",
+    "build": "webpack --progress --colors --config webpack.prod.config.js",
+    "lint": "eslint app",
     "clean": "rm -rf build/*",
-    "test": "./node_modules/.bin/mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
+    "test": "mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
     "test:watch": "npm run test -- --watch"
   },
   "betterScripts": {
     "dev": {
-      "command": "./node_modules/.bin/webpack-dev-server --progress",
+      "command": "webpack-dev-server --progress",
       "env": {
         "BUILD_DEV": "development"
       }
@@ -78,8 +78,10 @@
     "less": "^2.6.1",
     "less-loader": "^2.2.2",
     "mocha": "^2.4.5",
+    "node-sass": "^3.7.0",
     "open-browser-webpack-plugin": "0.0.2",
     "react-hot-loader": "^1.3.0",
+    "sass-loader": "^4.0.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",

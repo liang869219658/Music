@@ -4,35 +4,36 @@
 
 **Features：**
 
+
 - 可以解析JSX语法
 - 可以解析ES6语法新特性
 - 支持LESS预处理器
-- 支持SCSS预处理器
+- 支持SASS预处理器
 - 编译完成自动打开浏览器
 - 区分开发环境和生产环境
 - 实现组件级热更新
 - 实现代码的热替换，浏览器实时刷新查看效果
 - 分离业务功能代码和公共依赖代码
-- 单独分离CSS样式文件
-- 支持编译HTML模板
-- 支持文件MD5戳，解决文件缓存问题
+- 单独分离 CSS 样式文件
+- 支持编译 HTML 模板
+- 支持文件 MD5 戳，解决文件缓存问题
 - 支持图片、图标字体等资源的编译
 - 支持浏览器源码调试
 - 可以进行代码规则校验
-- 支持mocha测试用例运行
+- 支持 mocha 测试用例运行
 - 支持一行命令产出待部署资源
 
 ## 1. start
 
 ```
-$ git clone git@github.com:GuoYongfeng/webpack-dev-boilerplate.git
+$ git clone https://github.com/zaxlct/webpack-dev-boilerplate
 $ cd webpack-dev-boilerplate
 $ npm install
 ```
 ## 2. dev
 ### 2.1 开发调试
 ```
-$ npm run dev
+$ npm start
 ```
 
 查看效果` http://127.0.0.1:8080`
@@ -64,4 +65,6 @@ $ npm run build
 - [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [ ] [PostCSS](https://github.com/postcss/postcss)
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
+- [x] [Less](https://github.com/less/less.js)
+- [x] [Sass](https://github.com/sass/node-sass)
 - [x] [Eslint](https://github.com/eslint/eslint)

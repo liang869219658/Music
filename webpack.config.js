@@ -9,9 +9,23 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: [
-      path.resolve(__dirname, 'app/index.js')
-    ],
+    devServer: {
+      historyApiFallback: true,
+      hot: true,
+      inline: true,
+      contentBase: './build',
+      port: 8080,
+      stats: { colors: true },
+      host: '0.0.0.0',
+    },
+    entry: {
+      index: [
+        'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://localhost:8080',
+        path.resolve(__dirname, 'app/index.js')
+      ],
+      vendor: ['react', 'react-dom']
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: "[name].[hash:8].js",
@@ -40,6 +54,10 @@ module.exports = {
         {
           test: /\.less/,
           loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+        },
+        {
+          test: /\.scss/,
+          loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
         },
         {
           test: /\.(png|jpg)$/,
