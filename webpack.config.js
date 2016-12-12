@@ -1,21 +1,12 @@
+'use strict';
+
 var path = require('path');
 var webpack = require('webpack');
-// 编译后自动打开浏览器
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 // 产出html模板
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 // 单独样式文件
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var node_modules = path.resolve(__dirname, 'node_modules');
-
-/**
- * 标识开发环境和生产环境
- * @type {webpack.DefinePlugin}
- */
-var definePlugin = new webpack.DefinePlugin({
-    __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
-    __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
-});
 
 module.exports = {
     devServer: {
@@ -37,24 +28,24 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: "[name].js",
+        filename: "[name].[hash:8].js",
         publicPath: '/'
     },
     resolve: {
       extensions: ['', '.js', '.jsx', '.json'],
-      // 提高webpack搜索的速度
-      alias: { }
+      alias: {}
     },
-    devtool: 'source-map',
     'display-error-details': true,
-    // 使用externals可以将react分离，然后用<script>单独将react引入
-    externals: [],
     module: {
       loaders: [
         {
           test: /\.js[x]?$/,
           loaders: ['react-hot', 'babel'],
           exclude: path.resolve(__dirname, 'node_modules')
+        },
+        {
+          test: /\.scss$/,
+          loader: 'style!css!sass'
         },
         {
           test: /\.css/,
@@ -79,18 +70,32 @@ module.exports = {
       ]
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
-      definePlugin,
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+      new ExtractTextPlugin("main.[hash:8].css", {
+          allChunks: true,
+          disable: false
+      }),
+      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.[hash:8].js'),
+      new uglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }),
       new HtmlWebpackPlugin({
         title: 'your app title',
         template: './app/index.html',
       }),
-      new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
-      new ExtractTextPlugin("main.css", {
-          allChunks: true,
-          disable: false
+      new webpack.optimize.MinChunkSizePlugin({
+        compress: {
+          warnings: false
+        }
       }),
+      // 查找相等或近似的模块，避免在最终生成的文件中出现重复的模块
+      new webpack.optimize.DedupePlugin(),
+      // 按引用频度来排序 ID，以便达到减少文件大小的效果
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.AggressiveMergingPlugin({
+      			minSizeReduce: 1.5,
+      			moveToParents: true
+      	}),
     ]
 };

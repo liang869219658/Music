@@ -4,9 +4,11 @@
 
 **Features：**
 
-- 可以解析 JSX 语法
-- 可以解析 ES6 语法新特性
-- 支持 LESS/SASS 预处理器
+
+- 可以解析JSX语法
+- 可以解析ES6语法新特性
+- 支持LESS预处理器
+- 支持SASS预处理器
 - 编译完成自动打开浏览器
 - 区分开发环境和生产环境
 - 实现组件级热更新
@@ -56,8 +58,9 @@ $ npm run build
 - [x] [Webpack](https://webpack.github.io)
 - [x] [React](https://facebook.github.io/react/)
 - [x] [ES6](http://es6.ruanyifeng.com/)
-- [ ] [Redux](https://github.com/rackt/redux)
+- [x] [Redux](https://github.com/rackt/redux)
 - [x] [React-router](https://github.com/rackt/react-router-redux)
+- [x] [react-router-redux](https://github.com/reactjs/react-router-redux)
 - [x] [Babel](https://babeljs.io/)
 - [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [ ] [PostCSS](https://github.com/postcss/postcss)
