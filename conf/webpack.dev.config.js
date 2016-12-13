@@ -64,7 +64,7 @@ config.module.loaders.push({
 config.plugins.push(
   new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require('../public/react-manifest.json'),
+      manifest: require(path.resolve(publicPath,'react-manifest.json')),
       name:'react_library'
   }),
   new webpack.optimize.OccurenceOrderPlugin(),
