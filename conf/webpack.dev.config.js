@@ -62,6 +62,11 @@ config.module.loaders.push({
 });
 
 config.plugins.push(
+  new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('../public/react-manifest.json'),
+      name:'react_library'
+  }),
   new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
