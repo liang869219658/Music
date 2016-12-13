@@ -23,7 +23,7 @@
     "babel"
   ],
   "author": "guoyongfeng",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/GuoYongfeng/webpack-dev-boilerplate/issues"
   },
