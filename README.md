@@ -2,8 +2,7 @@
 
 > 这个脚手架工程模板用于快速启动基于React + Webpack为技术栈的前端项目
 
-**Features：**
-
+## Features 功能特性
 
 - 可以解析JSX语法
 - 可以解析ES6语法新特性
