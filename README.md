@@ -1,14 +1,14 @@
 # 基于React + Webpack + Babel的项目脚手架
 
-> 这个脚手架工程模板用于快速启动基于React + Webpack为技术栈的前端项目
+> 这个脚手架工程模板用于快速启动基于 React + Webpack 为技术栈的前端项目
 
 **Features：**
 
 
-- 可以解析JSX语法
-- 可以解析ES6语法新特性
-- 支持LESS预处理器
-- 支持SASS预处理器
+- 可以解析 JSX 语法
+- 可以解析 ES6 语法新特性
+- 支持 LESS 预处理器
+- 支持 SASS 预处理器
 - 编译完成自动打开浏览器
 - 区分开发环境和生产环境
 - 实现组件级热更新
@@ -26,7 +26,7 @@
 ## 1. start
 
 ```
-$ git clone https://github.com/zaxlct/webpack-dev-boilerplate
+$ git clone https://github.com/GuoYongfeng/webpack-dev-boilerplate
 $ cd webpack-dev-boilerplate
 $ npm install
 ```
