@@ -32,7 +32,6 @@ $ npm install
 ## 2. dev
 ### 2.1 开发调试
 ```
-$ npm run start:pre
 $ npm start
 ```
 
