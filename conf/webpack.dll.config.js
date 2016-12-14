@@ -1,17 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 let publicPath = path.resolve(__dirname, '../public/');
+let deps = require('../package.json').dependencies;
+
 module.exports = {
     entry: {
-        'react': [
-            'react',
-            'react-dom',
-            'history',
-            'react-router',
-            'redux',
-            'react-redux',
-            'react-router-redux'
-        ]
+        'react': Object.keys(deps)
     },
     output: {
         path: publicPath,
