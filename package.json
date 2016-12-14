@@ -4,7 +4,8 @@
   "description": "boilerplate",
   "main": "app/index.js",
   "scripts": {
-    "start": "webpack --config conf/webpack.dll.config.js&&cross-env NODE_ENV=development node conf/server.dev.js",
+    "start:pre":"webpack --config conf/webpack.dll.config.js",
+    "start": "cross-env NODE_ENV=development node conf/server.dev.js",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --progress --colors --config conf/webpack.prod.config.js",
     "lint": "eslint app",
     "clean": "rm -rf public/*",

@@ -32,6 +32,9 @@ $ npm install
 ## 2. dev
 ### 2.1 开发调试
 ```
+//首先运行dll预打包
+$ npm start:pre
+//打包完成，启动项目
 $ npm start
 ```
 
