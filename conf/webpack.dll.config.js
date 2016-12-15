@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const path = require('path');
-let publicPath = path.resolve(__dirname, '../public/');
-let deps = require('../package.json').dependencies;
+var webpack = require('webpack');
+var path = require('path');
+var publicPath = path.resolve(__dirname, '../public/');
+var deps = require('../package.json').dependencies;
 
 module.exports = {
     entry: {
