@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as Actions from '../../actions';
 import { MyComponent } from '../../components';
 
 import './index.css';
@@ -21,4 +24,20 @@ class App extends Component {
   }
 }
 
-export default App;
+
+
+App.contextTypes = {
+	router: React.PropTypes.object.isRequired
+};
+
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(Actions, dispatch);
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
