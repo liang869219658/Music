@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './index.css';
+import './index.less';
 
 class MyComponent extends Component {
   render() {

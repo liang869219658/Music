@@ -1,3 +1,5 @@
 'use strict';
 
-export App from './App/index.jsx';
+export App from './App';
+export Home from './Home';
+export Music from './Music';

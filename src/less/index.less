@@ -1,0 +1,51 @@
+//@import "./reset.less";
+//阿里图标库
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.16em;
+   fill: currentColor;
+   overflow: hidden;
+}
+//字体使用规范
+//字体通用方法
+.font_fn( @size : 12px, @color : #fff, @bold : narmal ){
+  font-size: @size;
+  font-weight: @bold;
+  color: @color;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+//主标题
+.font_main_head(){
+  .font_fn(16px, #666, bold);
+}
+
+//次级标题
+.font_sub_head(){
+  .font_fn(14px, #666, bold);
+}
+
+//小标题
+.font_small_head(){
+  .font_fn(12px, #666, bold);
+}
+
+//正文
+.font_text(){
+  .font_fn(12px, #666);
+}
+
+//辅助文字
+.font_help_text(){
+  .font_fn(12px, #999);
+}
+
+//失效文字
+.font_disabled_text(){
+  .font_fn(12px, #ccc);
+}
+
+//链接文字
+.font_link_text(){
+  .font_fn(12px, #2db7f5);
+}
