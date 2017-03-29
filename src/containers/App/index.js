@@ -62,19 +62,19 @@ class App extends Component {
                 <li className="app_left_box_child_ul_li">
                   <Link className="app_left_box_child_ul_li_box" onClick={ this.handleClick.bind(this,"/collection") } >
                     <svg className="app_left_box_child_ul_li_box_svg" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-changpian-1" />' }} />
-                    <p className={ classnames(this._pathname=="/collection"?"app_left_box_child_ul_li_box_hover app_left_box_child_ul_li_box_p":"app_left_box_child_ul_li_box_p") } >Collection</p>
+                    <p className={ classnames(this.props.location.pathname=="/collection"?"app_left_box_child_ul_li_box_hover app_left_box_child_ul_li_box_p":"app_left_box_child_ul_li_box_p") } >Collection</p>
                   </Link>
                 </li>
                 <li className="app_left_box_child_ul_li">
                   <Link className="app_left_box_child_ul_li_box" onClick={ this.handleClick.bind(this,"/about") } >
                     <svg className="app_left_box_child_ul_li_box_svg" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-changpian-1" />' }} />
-                    <p className={ classnames(this._pathname=="/about"?"app_left_box_child_ul_li_box_hover app_left_box_child_ul_li_box_p":"app_left_box_child_ul_li_box_p") } >About</p>
+                    <p className={ classnames(this.props.location.pathname=="/about"?"app_left_box_child_ul_li_box_hover app_left_box_child_ul_li_box_p":"app_left_box_child_ul_li_box_p") } >About</p>
                   </Link>
                 </li>
                 <li className="app_left_box_child_ul_li">
                   <Link className="app_left_box_child_ul_li_box" onClick={ this.handleClick.bind(this,"/my") } >
                     <svg className="app_left_box_child_ul_li_box_svg" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-changpian-1" />' }} />
-                    <p className={ classnames(this._pathname=="/my"?"app_left_box_child_ul_li_box_hover app_left_box_child_ul_li_box_p":"app_left_box_child_ul_li_box_p") } >My</p>
+                    <p className={ classnames(this.props.location.pathname=="/my"?"app_left_box_child_ul_li_box_hover app_left_box_child_ul_li_box_p":"app_left_box_child_ul_li_box_p") } >My</p>
                   </Link>
                 </li>
               </ul>

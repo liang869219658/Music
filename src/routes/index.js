@@ -1,4 +1,4 @@
-import { App, Home, Music } from '../containers';
+import { App, Home, Music, Collection } from '../containers';
 
 export const RouterConfig = [
 	{
@@ -8,6 +8,7 @@ export const RouterConfig = [
     childRoutes: [
         {path: 'home', component: Home},
 				{path: 'music', component: Music},
+				{path: 'collection', component: Collection},
 		]
 	}
 ];
