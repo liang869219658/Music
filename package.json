@@ -29,7 +29,9 @@
   },
   "homepage": "https://github.com/GuoYongfeng/webpack-dev-boilerplate#readme",
   "dependencies": {
+    "antd": "^2.8.3",
     "history": "^4.4.1",
+    "rc-queue-anim": "^0.13.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.6",
