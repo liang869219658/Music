@@ -115,28 +115,28 @@ class App extends Component {
 
       const dataTable = [{
         key: '1',
-        collection: <Radio.Group value={size} onChange={this.handleSizeChange}>
-                      <Radio.Button value="small"><Icon type="play-circle-o" /></Radio.Button>
-                      <Radio.Button value="small"><Icon type="plus-circle-o" /></Radio.Button>
-                      <Radio.Button value="small"><Icon type="heart-o" /></Radio.Button>
-                      <Radio.Button value="small"><Icon type="download" /></Radio.Button>
-                    </Radio.Group>,
+        collection: <ButtonGroup value={size} onChange={this.handleSizeChange}>
+                      <Button value="small"><Icon type="play-circle-o" /></Button>
+                      <Button value="small"><Icon type="plus-circle-o" /></Button>
+                      <Button value="small"><Icon type="heart-o" /></Button>
+                      <Button value="small"><Icon type="download" /></Button>
+                    </ButtonGroup>,
         name: '薛之谦',
         age: '薛之谦',
         address: '绅士'
       }, {
         key: '2',
-        collection: <Radio.Group value={size} onChange={this.handleSizeChange}>
-                      <Radio.Button value="small"><Icon type="play-circle-o" /></Radio.Button>
-                      <Radio.Button value="small"><Icon type="plus-circle-o" /></Radio.Button>
-                      <Radio.Button value="small"><Icon type="heart-o" /></Radio.Button>
-                      <Radio.Button value="small"><Icon type="download" /></Radio.Button>
+        collection: <ButtonGroup value={size} onChange={this.handleSizeChange}>
+                      <Button value="small"><Icon type="play-circle-o" /></Button>
+                      <Button value="small"><Icon type="plus-circle-o" /></Button>
+                      <Button value="small"><Icon type="heart-o" /></Button>
+                      <Button value="small"><Icon type="download" /></Button>
                       {
-                        /* <Radio.Button value="small"><Icon type="delete" /></Radio.Button> */
+                        /* <Button value="small"><Icon type="delete" /></Button> */
                       }
 
 
-                    </Radio.Group>,
+                    </ButtonGroup>,
         name: '丑八怪',
         age: '薛之谦',
         address: '绅士'
@@ -205,10 +205,10 @@ class App extends Component {
         { /*<MusicBgCanvas />*/ }
         <div className="music_box">
           <div className="music_box_search">
-            <Radio.Group value={this.state.size} >
-              <Radio.Button value="small">添加</Radio.Button>
-              <Radio.Button value="small">下载</Radio.Button>
-            </Radio.Group>
+            <ButtonGroup value={this.state.size} >
+              <Button value="small">添加</Button>
+              <Button value="small">下载</Button>
+            </ButtonGroup>
             <div className="certain-category-search-wrapper" style={{ width: 350 }}>
               <AutoComplete
                 className="certain-category-search"
