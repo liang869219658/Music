@@ -23,10 +23,17 @@ class App extends Component {
     });
   }
 
+  componentDidMount(){
+    let { fetchPosts } = this.props;
+    fetchPosts();
+  }
+
   render() {
+    let { isFetching, didInvalidate, lastUpdated } = this.props.posts;
     return (
       <div className="home">
         <BgCanvas/>
+        <p className="home_title">{ isFetching?"正在拉去数据！":"成功！" }</p>
         <p className="home_title">欢迎和我一起维护这个音乐项目！</p>
         <p className="home_text">
           <a className="home_text_a" href="http://github.com/liang869219658" target="_blank">github.com/liang869219658</a>

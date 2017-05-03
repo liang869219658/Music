@@ -36,6 +36,8 @@ class App extends Component {
 
   render() {
     const { stop_state, size } = this.state.size;
+    const { user, children, saveUser, posts, fetchPosts } = this.props;
+
     return (
       <div className="app">
             <QueueAnim className="app_left_box" component="ul">
@@ -104,7 +106,7 @@ class App extends Component {
               </div>
             </div>
           {
-            this.props.children
+            React.cloneElement( children, { user, saveUser, posts, fetchPosts } )
           }
         </div>
       </div>
@@ -121,6 +123,7 @@ App.contextTypes = {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  posts: state.posts,
 });
 
 function mapDispatchToProps(dispatch) {

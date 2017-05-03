@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../actions';
 import { MusicBgCanvas } from '../../components';
-import { Button, Radio, Icon, Input, AutoComplete, Table, Tag } from 'antd';
+import { Button, Radio, Icon, Input, AutoComplete, Progress, Table, Tag } from 'antd';
 const Option = AutoComplete.Option;
 const OptGroup = AutoComplete.OptGroup;
 const ButtonGroup = Button.Group;
@@ -123,7 +123,8 @@ class App extends Component {
                     </ButtonGroup>,
         name: '薛之谦',
         age: '薛之谦',
-        address: '绅士'
+        address: '绅士',
+        speed: <Progress percent={30} />
       }, {
         key: '2',
         collection: <ButtonGroup value={size} onChange={this.handleSizeChange}>
@@ -139,7 +140,8 @@ class App extends Component {
                     </ButtonGroup>,
         name: '丑八怪',
         age: '薛之谦',
-        address: '绅士'
+        address: '绅士',
+        speed: <Progress percent={30} />
       }];
 
       const columns = [{
@@ -154,6 +156,10 @@ class App extends Component {
         title: '专辑',
         dataIndex: 'address',
         key: 'address',
+      }, {
+        title: '进度',
+        dataIndex: 'speed',
+        key: 'speed',
       },{
         title: '控制',
         dataIndex: 'collection',
@@ -178,7 +184,7 @@ class App extends Component {
         //console.log(selectedRows);
         if( !selected ){
           this.state.selectedRowKeys.push( record.key );
-        }else {
+        } else {
           removeByValue( this.state.selectedRowKeys, record.key );
         }
         this.setState(this.state);
