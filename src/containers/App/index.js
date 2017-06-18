@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { is, fromJS} from 'immutable';
 import { Link, browserHistory } from 'react-router';
 import * as Actions from '../../actions';
 import { Button, Icon, Input } from 'antd';
@@ -22,6 +23,16 @@ class App extends Component {
     };
     this.click_stop_state= this.click_stop_state.bind(this);
     this._pathname = props.location.pathname;
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+      return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state),fromJS(nextState))
+  }
+
+  componentWillUpdate(nextProps,nextState){
+      if (this.props !== nextProps) {
+
+      }
   }
 
   handleClick(path) {

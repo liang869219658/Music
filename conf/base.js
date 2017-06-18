@@ -68,7 +68,7 @@ module.exports = {
       ]
     },
     plugins: [
-      new HtmlWebpackPlugin({
+      new HtmlWebpackPlugin({         //优化index.html
         title: 'your app title',
         template: commonPath.indexHTML  //模板的路径。支持加载器，例如 html!./index.html。
       }),

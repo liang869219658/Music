@@ -1,3 +1,4 @@
+import Immutable from 'immutable';
 import {
   FETCH_POSTS_REQUEST,
   FETCH_POSTS_FAILURE,
@@ -5,20 +6,20 @@ import {
 } from '../actions';
 
 
-const subreddit = {
+const subreddit = Immutable.fromJS({
   isFetching: false,
   didInvalidate: false,
-  lastUpdated: Date.now(),
-}
+  lastUpdated: Date.now()
+});
 
 function posts (state = subreddit, action){
 	switch (action.type){
 		case FETCH_POSTS_REQUEST:
-			return { ...subreddit, isFetching: true };
+			return state.set('isFetching',true);
 		case FETCH_POSTS_FAILURE:
-			return { ...subreddit, didInvalidate: true };
+			return state.set('didInvalidate',true);
     case FETCH_POSTS_SUCCESS:
-			return { ...subreddit, isFetching: false, ...action.response };
+			return state.merge({isFetching: false}, ...action.response);
 		default:
 			return state;
 	}

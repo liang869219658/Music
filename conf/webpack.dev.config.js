@@ -3,8 +3,8 @@
 var path = require("path");
 var webpack = require('webpack');
 var config = require('./base');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');       //优化index.html
+var ExtractTextPlugin = require('extract-text-webpack-plugin');     //抽离css，独立css
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 var rootPath = config.commonPath.rootPath;     // 项目根目录
@@ -16,7 +16,7 @@ var publicPath = config.commonPath.public;
  * @type {String}
  */
 config.output.filename = '[name].js';
-config.output.chunkFilename = '[id].js';
+config.output.chunkFilename= '[name].[chunkhash:6].chunk.js';
 config.output.publicPath = '/';
 
 /**
@@ -63,11 +63,11 @@ config.module.loaders.push({
 
 config.plugins.push(
   new webpack.DllReferencePlugin({
-      context: __dirname,
-      manifest: require(path.resolve(publicPath,'react-manifest.json')),
+      context: __dirname,   //路径
+      manifest: require(path.resolve(publicPath,'react-manifest.json')),    //引入依赖
       name:'react_library'
   }),
-  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
   new ExtractTextPlugin('[name].css'),

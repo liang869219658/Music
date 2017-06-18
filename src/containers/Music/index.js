@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { is, fromJS} from 'immutable';
 import * as Actions from '../../actions';
 import { MusicBgCanvas } from '../../components';
 import { Button, Radio, Icon, Input, AutoComplete, Progress, Table, Tag } from 'antd';
@@ -21,6 +22,16 @@ class App extends Component {
       selectedRowKeys: [],
     };
     this.click_stop_state= this.click_stop_state.bind(this)
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+      return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state),fromJS(nextState))
+  }
+
+  componentWillUpdate(nextProps,nextState){
+      if (this.props !== nextProps) {
+
+      }
   }
 
   handleClick(e) {

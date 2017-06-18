@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import { is, fromJS} from 'immutable';
 import $ from 'jquery';
 
 import './index.less';
 
 class BgCanvas extends Component {
+  constructor(props,connect) {
+    super(props,connect);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+      return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state),fromJS(nextState))
+  }
+
+  componentWillUpdate(nextProps,nextState){
+      if (this.props !== nextProps) {
+
+      }
+  }
 
   componentDidMount(){
 
@@ -128,6 +142,7 @@ class BgCanvas extends Component {
   }
 
   render() {
+    console.log('%c 子组件不会做重复刷新! ', 'background: #222; color: #bada55;');
     return (
   		<div className="large_header">
   			<canvas className="demo_canvas"></canvas>
